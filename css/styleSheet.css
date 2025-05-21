@@ -1,0 +1,72 @@
+
+.arrowUp{
+    background-color: rgb(35, 37, 36);
+    color: white; 
+    position: fixed;
+    right: 0rem;
+    bottom: 0rem;
+}
+nav{
+    translate: -14.6875rem;
+    width: fit-content;
+    position: fixed;
+    left: 0rem;
+    top: 0rem;
+    display: none;
+    z-index: 999;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.icons{
+    height: 100vh;
+}
+
+i{
+    font-size: 1.5rem;
+}
+
+.copyRights{
+    font-weight: 300;
+}
+
+.copyRights ul li a{
+    font-weight: 100;
+}
+
+input{
+    margin: 2.1875rem;
+    border: 2px solid white;
+    /* border-radius: 20%; */
+    padding: .625rem;
+    background-color: black;
+    color: white;
+}
+
+.overLay{
+    left: 0rem;
+    top: 0rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+}
+
+.overLay h2{
+    transform: translateY(-50px);
+}
+
+.row{
+    padding-left: 8.125rem ;
+    padding-right: 3.125rem;
+}
+#contactForm input{
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+}

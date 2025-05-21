@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link href="./css/all.min.css" rel="stylesheet"/>
+    <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./css/styleSheet.css" rel="stylesheet"/>
+    <link href="./css/media.css" rel="stylesheet"/>
+</head>
+<body class="bg-black">
+    <div class="arrowUp p-2 m-2 rounded rounded-bottom-circle"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></div>
+    <nav class="d-flex flex-row text-white" id="navBar">
+        <div class="content bg-black p-1 pt-4 pb-4 d-flex flex-column justify-content-between">
+            <ul class="d-flex flex-column gap-2">
+                <li id="nowPlaying"><a href="#">Now playing</a></li>
+                <li id="popular"><a href="#">Popular</a></li>
+                <li id="topRated"><a href="#">Top Rated</a></li>
+                <li id="trending"><a href="#">Trending</a></li>
+                <li id="upComing"><a href="#">Upcoming</a></li>
+                <li id="contactUs"><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="copyRights">
+            <ul class="d-flex gap-2">
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
+            </ul>
+            <p>
+                Copyright all rights are reserved.
+            </p>
+            <p>
+                created by <a href="#" class="text-danger">Hossan Ramadan</a>
+            </p>
+            </div>
+        </div>
+        <div class="icons p-4 d-flex flex-column justify-content-between bg-body-tertiary">
+            <div><i class="fa-solid fa-clapperboard" style="color: #090909;"></i></div>
+            <div class="d-none" id="xMark"><a href="#"><i class="fa-solid fa-xmark" style="color: #080808;"></i></a></div>
+            <div id="alignJust"><a href="#"><i class="fa-solid fa-align-justify" style="color: #0a0a0a;"></i></a></div>
+            <div class="internet">
+                <div class="p-1"><a href="#"><i class="fa-solid fa-globe" style="color: #090909;"></i></a></div>
+                <div class="p-1"><a href="#"><i class="fa-solid fa-share-nodes" style="color: #080808;"></i></a></div>
+            </div>
+        </div>
+    </nav>
+    <section class="d-flex justify-content-center">
+        <div class="w-50">
+            <input type="search" class="w-100 rounded rounded-pill" id="searchInput" placeholder="Search"/>
+        </div>
+    </section>
+    <section class="movies">
+        <div class="row g-2" id="allMovies">
+            <!-- <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="inner">
+                    <div class="position-relative">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small_2x/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" class="img-fluid"/>
+                        <div class="overLay position-absolute w-100 h-100 p-3 text-white d-flex flex-column align-items-center fw-lighter">
+                            <h2>Title</h2>
+                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veniam architecto nulla perspiciatis odit temporibus esse dolor numquam. Molestiae, ab.</p>
+                            <div class="last">
+                            <div class="date">11-12-2024</div>
+                            <div class="rating">6.5</div>
+                            </div>
+                        </div>
+                     </div>
+                </div>        
+            </div> -->
+        </div>
+    </section>
+    <section id="contactForm" class="p-3">
+        <form class="row">
+            <h2 class="p-3 text-white">Contact Us</h2>
+            <ul class="col-sm-12 col-md-6">
+                <li><input type="text" id="name" class="w-75" placeholder="Enter your name" /></li>
+                <li><input type="email" id="email" class="w-75" placeholder="Enter your email" /></li>
+                <li><input type="tel" id="phone" class="w-75" placeholder="Enter your phone" /></li>  
+            </ul>
+            <ul class="col-sm-12 col-md-6">
+                <li><input type="tel" id="age" class="w-75" placeholder="Enter your age" /></li>
+                <li><input type="password" id="password" class="w-75" placeholder="Enter your password" /></li>
+                <li><input type="password" id="phone" class="w-75" placeholder="Re-enter your password" /></li>  
+            </ul>
+            <button type="button" class="btn btn-dark w-25 m-4">Submit</button>
+        </form>
+    </section>
+
+    
+
+
+
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/jquery-3.7.1.min.js"></script>
+    <script src="./JS/index.js"></script>
+</body>
+</html>
