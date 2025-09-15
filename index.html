@@ -10,7 +10,7 @@
     <link href="./css/media.css" rel="stylesheet"/>
 </head>
 <body class="bg-black">
-    <div class="arrowUp p-2 m-2 rounded rounded-bottom-circle"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></div>
+    <div class="arrowUp p-2 m-2 rounded rounded-bottom-circle"><a href="javascript:void(0)"><i class="fa-solid fa-arrow-up"></i></a></div>
     <nav class="d-flex flex-row text-white" id="navBar">
         <div class="content bg-black p-1 pt-4 pb-4 d-flex flex-column justify-content-between">
             <ul class="d-flex flex-column gap-2">
@@ -23,25 +23,25 @@
             </ul>
             <div class="copyRights">
             <ul class="d-flex gap-2">
-                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
+                <li><a href="javascript:void(0)"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="javascript:void(0)"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="javascript:void(0)"><i class="fa-solid fa-globe"></i></a></li>
             </ul>
             <p>
                 Copyright all rights are reserved.
             </p>
             <p>
-                created by <a href="#" class="text-danger">Hossan Ramadan</a>
+                created by <a href="javascript:void(0)" class="text-danger">Hossan Ramadan</a>
             </p>
             </div>
         </div>
         <div class="icons p-4 d-flex flex-column justify-content-between bg-body-tertiary">
             <div><i class="fa-solid fa-clapperboard" style="color: #090909;"></i></div>
-            <div class="d-none" id="xMark"><a href="#"><i class="fa-solid fa-xmark" style="color: #080808;"></i></a></div>
-            <div id="alignJust"><a href="#"><i class="fa-solid fa-align-justify" style="color: #0a0a0a;"></i></a></div>
+            <div class="d-none" id="xMark"><a href="javascript:void(0)"><i class="fa-solid fa-xmark" style="color: #080808;"></i></a></div>
+            <div id="alignJust"><a href="javascript:void(0)"><i class="fa-solid fa-align-justify" style="color: #0a0a0a;"></i></a></div>
             <div class="internet">
-                <div class="p-1"><a href="#"><i class="fa-solid fa-globe" style="color: #090909;"></i></a></div>
-                <div class="p-1"><a href="#"><i class="fa-solid fa-share-nodes" style="color: #080808;"></i></a></div>
+                <div class="p-1"><a href="javascript:void(0)"><i class="fa-solid fa-globe" style="color: #090909;"></i></a></div>
+                <div class="p-1"><a href="javascript:void(0)"><i class="fa-solid fa-share-nodes" style="color: #080808;"></i></a></div>
             </div>
         </div>
     </nav>
@@ -73,14 +73,18 @@
         <form class="row">
             <h2 class="p-3 text-white">Contact Us</h2>
             <ul class="col-sm-12 col-md-6">
-                <li><input type="text" id="name" class="w-75" placeholder="Enter your name" /></li>
-                <li><input type="email" id="email" class="w-75" placeholder="Enter your email" /></li>
-                <li><input type="tel" id="phone" class="w-75" placeholder="Enter your phone" /></li>  
+                <li><input type="text" id="fname" name="fname" class="w-75" placeholder="Enter your name" />
+                <div class="nameError text-danger px-4 fs-6 fw-normal d-none">First letter should be capital</div></li>
+                <li><input type="email" id="email" name="email" class="w-75" placeholder="Enter your email" />
+                <div class="emailError text-danger px-4 fs-6 fw-normal d-none">Your Email Should be written as following "example@example.com"</div></li>
+                <li><input type="number" id="phone" name="phone" class="w-75" placeholder="Enter your phone" /></li>  
             </ul>
             <ul class="col-sm-12 col-md-6">
-                <li><input type="tel" id="age" class="w-75" placeholder="Enter your age" /></li>
-                <li><input type="password" id="password" class="w-75" placeholder="Enter your password" /></li>
-                <li><input type="password" id="phone" class="w-75" placeholder="Re-enter your password" /></li>  
+                <li><input type="number" id="age" name="age" class="w-75" placeholder="Enter your age" /></li>
+                <li><input type="password" id="password" name="password" class="w-75" placeholder="Enter your password" />
+                <div class="passError text-danger px-4 fs-6 fw-normal d-none">Your password should have at least one capital letter, symbole, number and no space</div></li>
+                <li><input type="password" id="repassword" name="repassword" class="w-75" placeholder="Re-enter your password" />
+                <div class="repassError text-danger px-4 fs-6 fw-normal d-none">Does not match try again!!</div></li>  
             </ul>
             <button type="button" class="btn btn-dark w-25 m-4">Submit</button>
         </form>
@@ -90,8 +94,8 @@
 
 
 
-    <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/jquery-3.7.1.min.js"></script>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
     <script src="./JS/index.js"></script>
 </body>
 </html>

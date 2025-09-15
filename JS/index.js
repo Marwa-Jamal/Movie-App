@@ -1,10 +1,8 @@
 //HTML elements
 const innerCard = document.getElementsByClassName("inner"); 
 const image = document.getElementsByTagName("img");
-console.log(image);
 const overLay = document.getElementsByClassName("overLay")
 const navBar = document.getElementById("navBar");
-console.log(navBar);
 const xMark = document.getElementById("xMark");
 const alignJust = document.getElementById("alignJust");
 console.log(alignJust);
@@ -16,22 +14,13 @@ const topRated = document.getElementById("topRated");
 const trending = document.getElementById("trending");
 const upComing = document.getElementById("upComing");
 const contactUs = document.getElementById("contactUs");
-
-//events by JS
-
-// for (let photo of image){
-//     console.log(photo);
-//     photo.addEventListener("mouseover", function(e){
-//         console.log(e.target);
-//         let currentElement = e.target;
-//         let nextSibling = currentElement.nextElementSibling;
-//         console.log(nextSibling);
-//         nextSibling.classList.remove("d-none")
-//         nextSibling.style.display = "flex";
-//         nextSibling.style.opacity = "1";
-//         nextSibling.style.transition = "opacity 2s";
-//     })
-// }
+//Regex For contact form
+var regexuserEmail = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/;
+var regexpassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
+let fname = document.getElementById("fname");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let repassword = document.getElementById("repassword");
 
 
 
@@ -52,6 +41,8 @@ async function getMovies(x){
     console.log(movieArray);
     displayMovies(movieArray);
 };
+
+
 
 function displayMovies(data){
     allMovies.innerHTML="";
@@ -113,86 +104,17 @@ xMark.addEventListener("click", function(){
         navBar.style.transition = "transform 1s";
     })
 
-popular.addEventListener("click",async function(){
-    console.log("Hellow!!!");
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
-        }
-      };
-    let response = await fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`,options)
-    let data = await response.json();
-    let movieArray = data.results;
-    console.log(data);
-    console.log(movieArray);
-    displayMovies(movieArray);
+popular.addEventListener("click", function(){
+  getMovies("popular");
 })
-nowPlaying.addEventListener("click",async function(){
-    console.log("Hellow!!!");
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
-        }
-      };
-    let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1`,options)
-    let data = await response.json();
-    let movieArray = data.results;
-    console.log(data);
-    console.log(movieArray);
-    displayMovies(movieArray);
+nowPlaying.addEventListener("click", function(){
+  getMovies("now_playing");
 })
-topRated.addEventListener("click",async function(){
-    console.log("Hellow!!!");
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
-        }
-      };
-    let response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`,options)
-    let data = await response.json();
-    let movieArray = data.results;
-    console.log(data);
-    console.log(movieArray);
-    displayMovies(movieArray);
+topRated.addEventListener("click", function(){
+  getMovies("top_rated");
 })
-nowPlaying.addEventListener("click",async function(){
-    console.log("Hellow!!!");
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
-        }
-      };
-    let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1`,options)
-    let data = await response.json();
-    let movieArray = data.results;
-    console.log(data);
-    console.log(movieArray);
-    displayMovies(movieArray);
-})
-
-upComing.addEventListener("click",async function(){
-    console.log("Hellow!!!");
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
-        }
-      };
-    let response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`,options)
-    let data = await response.json();
-    let movieArray = data.results;
-    console.log(data);
-    console.log(movieArray);
-    displayMovies(movieArray);
+upComing.addEventListener("click", function(){
+  getMovies("upcoming");
 })
 
 trending.addEventListener("click", async function(){
@@ -214,18 +136,88 @@ trending.addEventListener("click", async function(){
 })
 
 
+
+// topRated.addEventListener("click",async function(){
+//     console.log("Hellow!!!");
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//           accept: 'application/json',
+//           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
+//         }
+//       };
+//     let response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`,options)
+//     let data = await response.json();
+//     let movieArray = data.results;
+//     console.log(data);
+//     console.log(movieArray);
+//     displayMovies(movieArray);
+// })
+
+// upComing.addEventListener("click",async function(){
+//     console.log("Hellow!!!");
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//           accept: 'application/json',
+//           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
+//         }
+//       };
+//     let response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`,options)
+//     let data = await response.json();
+//     let movieArray = data.results;
+//     console.log(data);
+//     console.log(movieArray);
+//     displayMovies(movieArray);
+// })
+
+// popular.addEventListener("click",async function(){
+//     console.log("Hellow!!!");
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//           accept: 'application/json',
+//           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
+//         }
+//       };
+//     let response = await fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`,options)
+//     let data = await response.json();
+//     let movieArray = data.results;
+//     console.log(data);
+//     console.log(movieArray);
+//     displayMovies(movieArray);
+// })
+
+
+// nowPlaying.addEventListener("click",async function(){
+//     console.log("Hellow!!!");
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//           accept: 'application/json',
+//           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjdjOWQ1Y2VlNDhlNmUyYjk0ZmI0MzQ0YmU1NmE5NiIsIm5iZiI6MTc0Nzc5NTY0OS4yNzcsInN1YiI6IjY4MmQzZWMxZTRiM2Y5OTlkZmUyNTUxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.X_ZxZjWVXJhhbooheIyctjHPGF7n569fCOWqTU7-q4w'
+//         }
+//       };
+//     let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1`,options)
+//     let data = await response.json();
+//     let movieArray = data.results;
+//     console.log(data);
+//     console.log(movieArray);
+//     displayMovies(movieArray);
+// })
+
+
+
 // events by JQuery
 
-const arrowUp = document.getElementsByClassName("arrowUp");
-
 $(".arrowUp").on("click", function(){
-    console.log("HI")
+    console.log("HI");
     $("html, body").animate({scrollTop : 0}, 2000);
+});
+
+  $("#contactUs").on("click", function(){
+    const contactOFFset = $("#contactForm").offset().top;
+    console.log(contactOFFset)
+    $("html, body").animate({scrollTop : contactOFFset}, 2000);
 })
 
-
-const contactOFFset = $("#contactForm").offset().top;
-console.log(contactOFFset)
-$("#contactUs").on("click", function(){
-    $("html, body").animate({scrollTop : 5000}, 2000);
-})
